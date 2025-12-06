@@ -62,6 +62,27 @@ h1, h2, p {
   line-height: 1.4;
 }
 
+/* Sous-menu spécifique au Quiz */
+.sub-menu {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.sub-menu a {
+  background: #34495e;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.sub-menu a:hover {
+  background: #2c3e50;
+  text-decoration: underline;
+}
+
 /* Adaptations pour petits écrans */
 @media (max-width: 600px) {
   nav a {
