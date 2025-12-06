@@ -1,57 +1,74 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+/* Reset de base */
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+body { font-family: Arial, sans-serif; line-height:1.6; }
 
-/* Barre de navigation */
+/* Barre de navigation fixée et centrée */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   background: #34495e;
   z-index: 9999;
 }
-
-/* Liste horizontale et centrée */
-nav ul {
-  list-style: none;       /* enlève les puces */
-  margin: 0;
-  padding: 12px 0;
-  text-align: center;     /* centre le contenu */
-}
-
-nav ul li {
-  display: inline-block;  /* chaque élément sur une seule ligne */
-  margin: 0 20px;         /* espace entre les liens */
+.nav-inner {
+  display: flex;
+  justify-content: center;   /* centre les liens */
+  align-items: center;
+  gap: 28px;                 /* espace régulier entre les liens */
+  padding: 14px 16px;
+  flex-wrap: wrap;           /* permet de passer sur 2 lignes si écran étroit */
 }
 
 /* Liens du menu */
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
+  display: inline-block;
+  white-space: nowrap;
 }
-
-nav a:hover {
-  text-decoration: underline;
-}
+nav a:hover { text-decoration: underline; }
 
 /* Contenu sous le menu */
 .container {
-  margin-top: 80px;       /* espace sous le menu */
+  max-width: 1000px;
+  margin: 96px auto 40px;    /* espace sous le menu */
+  padding: 0 16px;
   text-align: center;
 }
 
+/* Image d’accueil */
 .hero img {
-  max-width: 90%;
+  max-width: 100%;           /* prend toute la largeur disponible */
   height: auto;
   border-radius: 8px;
+  display: block;
+  margin: 0 auto;
 }
 
+/* Pied de page */
 footer {
   background: #2c3e50;
   color: white;
   text-align: center;
   padding: 15px;
   margin-top: 40px;
+}
+
+/* Titres et textes adaptatifs */
+h1, h2, p {
+  font-size: clamp(16px, 2.5vw, 22px);
+  line-height: 1.4;
+}
+
+/* Adaptations pour petits écrans */
+@media (max-width: 600px) {
+  nav a {
+    font-size: 16px;         /* liens plus petits sur mobile */
+  }
+  .container {
+    margin-top: 120px;       /* un peu plus d’espace sous le menu */
+    padding: 0 8px;
+  }
 }
