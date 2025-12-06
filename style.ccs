@@ -12,11 +12,12 @@ nav {
 }
 .nav-inner {
   display: flex;
-  justify-content: center;   /* centre les liens */
+  justify-content: center;   /* centre horizontalement */
   align-items: center;
   flex-wrap: wrap;           /* passe sur 2 lignes si écran étroit */
   gap: 20px;
   padding: 14px 16px;
+  text-align: center;        /* force le centrage */
 }
 
 /* Liens du menu */
@@ -26,7 +27,6 @@ nav a {
   font-weight: bold;
   font-size: 18px;
   display: inline-block;
-  white-space: nowrap;
 }
 nav a:hover { text-decoration: underline; }
 
@@ -35,7 +35,7 @@ nav a:hover { text-decoration: underline; }
   max-width: 1000px;
   margin: 96px auto 40px;    /* auto = centre horizontalement */
   padding: 0 16px;
-  text-align: center;
+  text-align: center;        /* centre le texte */
 }
 
 /* Bloc image + texte d’accueil */
@@ -46,11 +46,10 @@ nav a:hover { text-decoration: underline; }
   align-items: center;       /* centre horizontalement */
 }
 .hero img {
-  max-width: 100%;           /* prend toute la largeur disponible */
+  width: 100%;               /* occupe toute la largeur dispo */
+  max-width: 600px;          /* limite sur grand écran */
   height: auto;
   border-radius: 8px;
-  display: block;
-  margin: 0 auto;            /* centre l’image */
 }
 
 /* Pied de page */
@@ -92,10 +91,13 @@ h1, h2, p {
 /* Adaptations pour petits écrans */
 @media (max-width: 600px) {
   nav a {
-    font-size: 16px;         /* liens plus petits sur mobile */
+    font-size: 16px;
   }
   .container {
-    margin-top: 120px;       /* un peu plus d’espace sous le menu */
+    margin-top: 120px;
     padding: 0 8px;
+  }
+  .hero img {
+    max-width: 100%;         /* sur mobile, l’image prend toute la largeur */
   }
 }
